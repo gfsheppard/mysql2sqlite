@@ -269,7 +269,10 @@ aInc == 1 && /PRIMARY KEY|primary key/ { next }
     }
     # idx_ prefix to avoid name clashes (they really happen!)
     key[tableName] = key[tableName] "CREATE INDEX \"idx_" \
-       tableName "_" indexName "\" ON \"" tableName "\" (" indexKey ");\n"
+        (" indexKey ");\n"
+
+    # key[tableName] = key[tableName] "CREATE INDEX \"idx_" \
+       # tableName "_" indexName "\" ON \"" tableName "\" (" indexKey ");\n"
   }
 }
 
